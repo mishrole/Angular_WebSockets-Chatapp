@@ -3,6 +3,9 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
+  "env": {
+    "browser": true
+  },
   "overrides": [
     {
       "files": [
@@ -16,6 +19,9 @@
         "createDefaultProgram": true
       },
       "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+
         "eslint:recommended",
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
@@ -47,6 +53,13 @@
             "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
             "allowSeparatedGroups": false
           }
+        ],
+        "array-element-newline": [
+          "error",
+          {
+            "ArrayExpression": "consistent",
+            "ArrayPattern": { "minItems": 3 }
+          }
         ]
       }
     },
@@ -55,7 +68,8 @@
         "*.html"
       ],
       "extends": [
-        "plugin:@angular-eslint/template/recommended"
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:prettier/recommended"
       ],
       "rules": {}
     }

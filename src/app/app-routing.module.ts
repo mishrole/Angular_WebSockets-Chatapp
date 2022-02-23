@@ -1,10 +1,21 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { SharedModule } from './views/pages/shared/shared.module';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/chat',
+    pathMatch: 'full'
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./views/pages/landing/landing.module').then((m) => m.LandingModule)
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [SharedModule, RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
