@@ -3,6 +3,11 @@
   "singleQuote": true,
   "trailingComma": "none",
   "endOfLine": "auto",
+  "semi": true,
+  "arrowParens": "always",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "quoteProps": "as-needed",
   "overrides": [
     {
       "files": ["*.html"],
